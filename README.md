@@ -1,3 +1,5 @@
+#GADES
+
 Extension of the similarity measure ICOnSim with Information Content. A Similarity Measure for Determining Relatedness Between Ontology Terms.
 
 [1] Ignacio Traverso-Ribón, Maria-Esther Vidal, Benedikt Kämpgen and York Sure-Vetter. GADES: A Graph-based Semantic Similarity Measure. Semantics 2016, Leipzig.
