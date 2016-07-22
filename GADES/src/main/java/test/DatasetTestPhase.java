@@ -43,7 +43,7 @@ public class DatasetTestPhase {
 		String[] p = {"resources/dataset3/"};
 		for (String prefix: p)
 		{
-			String ontFile = prefix + "goProtein/goEL.owl";
+			String ontFile = prefix + "goProtein/go.owl";
 			MyOWLOntology o = new MyOWLOntology(ontFile, ontPrefix.get(prefix));
 			String comparisonFile = prefix + "proteinpairs.txt";
 			List<ComparisonResult> comparisons = DatasetTest.readComparisonFile(comparisonFile);

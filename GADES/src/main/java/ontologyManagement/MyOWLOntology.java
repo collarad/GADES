@@ -12,21 +12,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
-import kse.findj.edg.core.ExplanationRoutine;
-import kse.findj.edg.core.MasterRoutine;
-import kse.findj.edg.core.MyAxiomRecorder;
-import kse.findj.edg.data.AxiomGCI0;
-import kse.findj.edg.data.AxiomGCI1;
-import kse.findj.edg.data.AxiomGCI2;
-import kse.findj.edg.data.AxiomGCI3;
-import kse.findj.edg.data.AxiomR;
-import kse.findj.edg.data.AxiomRI2;
-import kse.findj.edg.data.AxiomRI3;
-import kse.findj.edg.data.AxiomS;
-import kse.findj.edg.data.MyAxiom;
-import kse.findj.edg.data.MyAxiomRepository;
-import kse.findj.reasoner.ELKOWLOntologyReasoner;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.semanticweb.HermiT.Reasoner;
@@ -85,12 +70,10 @@ public class MyOWLOntology {
 	private Map<OWLClass, Map<OWLClass, Integer>> conceptDistances;
 	private Map<String, OWLRelation> relations;
 	private OWLReasoner reasoner;
-	private ELKOWLOntologyReasoner reasonerExpl;
 	private OWLDataFactory factory;
 	private ExplanationGenerator<OWLAxiom> expl;
 	private String prefix;
 	private Map<OWLRelation, Set<List<OWLRelation>>> propertyChains;
-	private MyAxiomRepository repository;
 	private int expID;
 	private Map<AnnotationComparison, OWLConcept> lcas;
 	private Map<AnnotationComparison, Set<OWLConcept>> disAncestors;
@@ -286,10 +269,7 @@ public class MyOWLOntology {
 			}
 		}
 		Map<OWLSubClassOfAxiom, Set<OWLExplanation>> explanations;
-		if (reasonerExpl != null)
-			explanations = getQuickExplanations(mapAxioms.keySet());
-		else
-			explanations = getExplanations(mapAxioms.keySet());
+		explanations = getExplanations(mapAxioms.keySet());
 		for (OWLSubClassOfAxiom ax: explanations.keySet())
 		{
 			mapAxioms.get(ax).setExplanations(explanations.get(ax));
@@ -441,163 +421,6 @@ public class MyOWLOntology {
         //============= END GETTING EXPLANATION ===============================
 	}
 	
-	@SuppressWarnings("deprecation")
-	private Map<OWLSubClassOfAxiom, Set<OWLExplanation>> getQuickExplanations (Set<OWLSubClassOfAxiom> linkAxioms)
-	{
-		Map<OWLSubClassOfAxiom, Set<OWLExplanation>> mapExpl = new HashMap<OWLSubClassOfAxiom, Set<OWLExplanation>>();
-		Map<OWLSubClassOfAxiom, OWLAxiom> mapJust = new HashMap<OWLSubClassOfAxiom, OWLAxiom>();
-		for (OWLSubClassOfAxiom linkAxiom: linkAxioms)
-		{
-			if (o.containsAxiom(linkAxiom))
-	        {
-	        	mapExpl.put(linkAxiom, new HashSet<OWLExplanation>());
-	        }
-	        else
-	        {
-	        	OWLObjectSomeValuesFrom relationAxiom = (OWLObjectSomeValuesFrom) linkAxiom.getSuperClass();
-	        	
-	        	PrefixManager pm = new DefaultPrefixManager(prefix);
-	    		OWLClass test = factory.getOWLClass(":testExpl" + expID++, pm);
-	    		Set<OWLClassExpression> equivalents = new HashSet<OWLClassExpression>();
-	    		equivalents.add(test);
-	    		equivalents.add(relationAxiom);
-	    		OWLSubClassOfAxiom equiv = factory.getOWLSubClassOfAxiom(relationAxiom, test);
-	    		mapJust.put(linkAxiom, equiv);
-	        }
-		}
-		reasonerExpl.flush(repository, new HashSet<OWLAxiom>(mapJust.values()));
-		
-		for (OWLSubClassOfAxiom l: mapJust.keySet())
-		{
-			OWLClass a = l.getSubClass().asOWLClass();
-			OWLClass test = ((OWLSubClassOfAxiom) mapJust.get(l)).getSuperClass().asOWLClass();
-			
-			int threadNum = 1;
-    		MasterRoutine masterRoutine = new MasterRoutine(repository, threadNum, reasonerExpl.getIntegerClass(a.toStringID()), reasonerExpl.getIntegerClass(test.toStringID()));//.toStringID()));		
-    		masterRoutine.computeResult();
-    		
-    		Set<ExplanationRoutine> justifications = masterRoutine.getJustifications();
-    		MyAxiomRecorder recorder = masterRoutine.getRecorder();
-    		Map<Integer, OWLClass> classMap = reasonerExpl.getClassMap();
-    		Map<Integer, OWLObjectProperty> propMap = reasonerExpl.getObjectPropertyMap();
-    		Set<Set<OWLAxiom>> axiomsSets = new HashSet<Set<OWLAxiom>>();
-
-    		for(ExplanationRoutine expRoutine : justifications){
-
-    			Set<Integer> justs = expRoutine.getOriginalAxioms();
-    			Set<OWLAxiom> axioms = new HashSet<OWLAxiom>();
-    			boolean addExplanation = true;
-
-    			for (Iterator<Integer> j = justs.iterator(); j.hasNext() && addExplanation; ){
-    				Integer just = j.next();
-    				MyAxiom ax = recorder.getAxiomFromId(just);
-    				OWLAxiom axiom = null;
-    				if (ax instanceof AxiomGCI0)
-    				{
-    					AxiomGCI0 gci0 = (AxiomGCI0) ax;
-    					axiom = factory.getOWLSubClassOfAxiom(classMap.get(gci0.getSubClass()), classMap.get(gci0.getSuperClass()));
-    				}
-    				else if (ax instanceof AxiomGCI1)
-    				{
-    					AxiomGCI1 gci1 = (AxiomGCI1) ax;
-    					OWLClass x = classMap.get(gci1.getLeftSubClass());
-    					OWLClass y = classMap.get(gci1.getRightSubClass());
-    					OWLClass sup = classMap.get(gci1.getSuperClass());
-    					Set<OWLClass> intersection = new HashSet<OWLClass>();
-    					intersection.add(x);
-    					intersection.add(y);
-    					if (x == null || y == null)
-    						addExplanation = false;
-    					else
-    					{
-    						OWLClassExpression interAx = factory.getOWLObjectIntersectionOf(intersection);
-    						axiom = factory.getOWLSubClassOfAxiom(interAx, sup);
-    					}
-    				}
-    				else if (ax instanceof AxiomGCI2)
-    				{
-    					AxiomGCI2 gci2 = (AxiomGCI2) ax;
-    					OWLClass x = classMap.get(gci2.getSubClass());
-    					OWLClass y = classMap.get(gci2.getClassInSuperClass());
-    					OWLObjectProperty prop = propMap.get(gci2.getPropertyInSuperClass());
-    					OWLClassExpression e = factory.getOWLObjectSomeValuesFrom(prop, y);
-    					axiom = factory.getOWLSubClassOfAxiom(x, e);
-    				}
-    				else if (ax instanceof AxiomGCI3)
-    				{
-    					AxiomGCI3 gci3 = (AxiomGCI3) ax;
-    					OWLClass x = classMap.get(gci3.getClassInSubClass());
-    					OWLClass y = classMap.get(gci3.getSuperClass());
-    					OWLObjectProperty prop = propMap.get(gci3.getPropertyInSubClass());
-    					if (x == null || y == null || prop == null)
-    						addExplanation = false;
-    					else
-    					{
-    						OWLClassExpression e = factory.getOWLObjectSomeValuesFrom(prop, x);
-    						axiom = factory.getOWLSubClassOfAxiom(e, y);
-    					}
-    				}
-    				else if (ax instanceof AxiomRI2)
-    				{
-    					AxiomRI2 ri2 = (AxiomRI2) ax;
-    					OWLObjectProperty x = propMap.get(ri2.getSubProperty());
-    					OWLObjectProperty y = propMap.get(ri2.getSuperProperty());
-    					axiom = factory.getOWLSubObjectPropertyOfAxiom(x, y);
-    				}
-    				else if (ax instanceof AxiomRI3)
-    				{
-    					AxiomRI3 ri3 = (AxiomRI3) ax;
-    					OWLObjectProperty x = propMap.get(ri3.getLeftSubProperty());
-    					OWLObjectProperty y = propMap.get(ri3.getRightSubProperty());
-    					OWLObjectProperty z = propMap.get(ri3.getSuperProperty());
-    					List<OWLObjectProperty> chain = new ArrayList<OWLObjectProperty>();
-    					chain.add(x);
-    					chain.add(y);
-    					axiom = factory.getOWLSubPropertyChainOfAxiom(chain, z);
-    				}
-    				else if (ax instanceof AxiomR)
-    				{
-    					AxiomR r = (AxiomR) ax;
-    					OWLClass x = classMap.get(r.getSubClass());
-    					OWLClass y = classMap.get(r.getClassInSuperClass());
-    					OWLObjectProperty prop = propMap.get(r.getPropertyInSuperClass());
-    					OWLClassExpression e = factory.getOWLObjectSomeValuesFrom(prop, y);
-    					axiom = factory.getOWLSubClassOfAxiom(x, e);
-    				}
-    				else if (ax instanceof AxiomS)
-    				{
-    					AxiomS s = (AxiomS) ax;
-    					OWLClass x = classMap.get(s.getSubClass());
-    					OWLClass y = classMap.get(s.getSuperClass());
-    					axiom = factory.getOWLSubClassOfAxiom(x, y);
-    				}
-    				if (axiom != null && !axiom.getClassesInSignature().contains(test))
-    				{
-    					axioms.add(axiom);
-    				}
-    			}
-    			if (addExplanation)
-    				axiomsSets.add(axioms);
-    		}
-    		
-    		Set<OWLExplanation> explanations = new HashSet<OWLExplanation>();
-    		int i = 0;
-        	for (Iterator<Set<OWLAxiom>> j = axiomsSets.iterator(); j.hasNext() && i < 1; i++)
-        	{
-        		OWLExplanation e;
-				try {
-					e = new OWLExplanation(j.next(), this);
-					explanations.add(e);
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-        	}
-        	mapExpl.put(l, explanations);
-        }
-        
-		return mapExpl;
-	}
 	
 	public Set<OWLLink> getDirectNeighbors (OWLConcept c)
 	{
@@ -899,19 +722,11 @@ public class MyOWLOntology {
         reasoner.precomputeInferences(InferenceType.DISJOINT_CLASSES);
         ExplanationGeneratorFactory<OWLAxiom> genFac = ExplanationManager.createExplanationGeneratorFactory(reasonerFactory); //new ElkReasonerFactory());
         expl = genFac.createExplanationGenerator(o);
-        
-        if (reasonerExpl != null)
-        {
-	        reasonerExpl.doInference();
-	        repository = new MyAxiomRepository(reasonerExpl);//reasonerExpl.getClassGraph(),	reasonerExpl.getRelationSet(),	reasonerExpl.getNormalizedIntegerAxiomSet()						);
-			repository.createIndex();
-        }
 	}
 	private void startELKReasoner(){
 		OWLReasonerFactory reasonerFactory = new ElkReasonerFactory();//Reasoner.ReasonerFactory(); //new JcelReasonerFactory(); // new JFactFactory(); //new PelletReasonerFactory(); // 
 		OWLReasonerConfiguration configuration = new ElkReasonerConfiguration();
 		reasoner =  reasonerFactory.createReasoner(o, configuration);
-		reasonerExpl = new ELKOWLOntologyReasoner((ElkReasoner) reasoner, o);
 		startReasoner(reasonerFactory, configuration);
 	}
 	
@@ -922,8 +737,6 @@ public class MyOWLOntology {
 		//configuration.ignoreUnsupportedDatatypes = true;
 		//configuration.throwInconsistentOntologyException = false;
 		reasoner =  reasonerFactory.createReasoner(o, (OWLReasonerConfiguration) configuration);
-		
-		reasonerExpl = null;// If ontology is EL you can assign new ELKOWLOntologyReasoner(o);
 		startReasoner(reasonerFactory, (OWLReasonerConfiguration) configuration);
 	}
 	
@@ -932,7 +745,6 @@ public class MyOWLOntology {
 		ConsoleProgressMonitor progressMonitor = new ConsoleProgressMonitor();
 		OWLReasonerConfiguration configuration = new SimpleConfiguration(progressMonitor);
 		reasoner = reasonerFactory.createReasoner(o, configuration);
-		reasonerExpl = null;
 		startReasoner(reasonerFactory, configuration);
 	}
 	
