@@ -1,0 +1,1165 @@
+<Entities>
+  <Pair>
+    <Source>
+      <EntityDescription>
+        <Type>http://dbpedia.org/ontology/Person</Type>
+        <Restriction></Restriction>
+        <Paths>
+          <Path>/&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;</Path>
+          <Path>/&lt;http://purl.org/dc/terms/subject&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/name&gt;</Path>
+          <Path>/&lt;http://www.w3.org/2002/07/owl#sameAs&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/name&gt;</Path>
+          <Path>/&lt;http://www.w3.org/2000/01/rdf-schema#label&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/abstract&gt;</Path>
+          <Path>/&lt;http://www.w3.org/2000/01/rdf-schema#comment&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/wikiPageExternalLink&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/birthPlace&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/isPrimaryTopicOf&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/birthPlace&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/wikiPageID&gt;</Path>
+          <Path>/&lt;http://www.w3.org/ns/prov#wasDerivedFrom&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/wikiPageRevisionID&gt;</Path>
+          <Path>/&lt;http://purl.org/voc/vrank#hasRank&gt;</Path>
+          <Path>/&lt;http://purl.org/dc/elements/1.1/description&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/birthDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/birthDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/careerStation&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/team&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/years&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/birthYear&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/currentMember&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/occupation&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/clubs&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/shortDescription&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/givenName&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/occupation&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/squadNumber&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/placeOfBirth&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/dateOfBirth&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/surname&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/caps&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/homepage&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/goals&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/thumbnail&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/nationality&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/depiction&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/position&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/activeYearsStartYear&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/height&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/position&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/deathPlace&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/deathDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/deathPlace&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/genre&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/deathDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/fullname&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/Person/height&gt;</Path>
+        </Paths>
+      </EntityDescription>
+    </Source>
+    <Target>
+      <EntityDescription>
+        <Type>http://dbpedia.org/ontology/Person</Type>
+        <Restriction></Restriction>
+        <Paths>
+          <Path>/&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;</Path>
+          <Path>/&lt;http://purl.org/dc/terms/subject&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/name&gt;</Path>
+          <Path>/&lt;http://www.w3.org/2002/07/owl#sameAs&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/name&gt;</Path>
+          <Path>/&lt;http://www.w3.org/2000/01/rdf-schema#label&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/abstract&gt;</Path>
+          <Path>/&lt;http://www.w3.org/2000/01/rdf-schema#comment&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/wikiPageExternalLink&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/birthPlace&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/wikiPageRevisionID&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/birthPlace&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/wikiPageID&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/isPrimaryTopicOf&gt;</Path>
+          <Path>/&lt;http://www.w3.org/ns/prov#wasDerivedFrom&gt;</Path>
+          <Path>/&lt;http://purl.org/voc/vrank#hasRank&gt;</Path>
+          <Path>/&lt;http://purl.org/dc/elements/1.1/description&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/birthDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/birthDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/careerStation&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/team&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/years&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/birthYear&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/clubs&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/currentMember&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/occupation&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/shortDescription&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/occupation&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/givenName&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/squadNumber&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/dateOfBirth&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/surname&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/placeOfBirth&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/caps&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/homepage&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/goals&gt;</Path>
+          <Path>/&lt;http://xmlns.com/foaf/0.1/depiction&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/nationality&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/thumbnail&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/activeYearsStartYear&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/height&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/position&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/position&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/deathPlace&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/deathDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/deathDate&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/deathPlace&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/ontology/Person/height&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/fullname&gt;</Path>
+          <Path>/&lt;http://dbpedia.org/property/genre&gt;</Path>
+        </Paths>
+      </EntityDescription>
+    </Target>
+  </Pair>
+  <SourceEntities>
+    <Entity uri="http://dbpedia.org/resource/2015_Yangon_United_F.C._season__Nyein_Chan_Aung__1/dump0">
+      <Val>
+        <e>http://www.w3.org/2002/07/owl#Thing</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://dbpedia.org/ontology/Agent</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://dbpedia.org/ontology/OrganisationMember</e>
+        <e>http://schema.org/Person</e>
+        <e>http://dbpedia.org/ontology/SportsTeamMember</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Nyein Chan Aung</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Nyein_Chan_Aung</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Sayuri_Ueda/dump0">
+      <Val>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://dbpedia.org/ontology/Agent</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+        <e>http://dbpedia.org/ontology/Writer</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:1964_births</e>
+        <e>http://dbpedia.org/resource/Category:People_from_Kobe</e>
+        <e>http://dbpedia.org/resource/Category:Women_short_story_writers</e>
+        <e>http://dbpedia.org/resource/Category:Japanese_fantasy_writers</e>
+      </Val>
+      <Val>
+        <e>Sayuri Ueda</e>
+        <e>Ueda, Sayuri</e>
+      </Val>
+      <Val>
+        <e>http://ja.dbpedia.org/resource/上田早夕里</e>
+        <e>http://wikidata.dbpedia.org/resource/Q11359823</e>
+        <e>http://www.wikidata.org/entity/Q11359823</e>
+      </Val>
+      <Val>
+        <e>Ueda, Sayuri</e>
+      </Val>
+      <Val>
+        <e>上田早夕里</e>
+        <e>Sayuri Ueda</e>
+      </Val>
+      <Val>
+        <e>上田 早夕里（うえだ さゆり、1964年10月26日 - ）は、日本の小説家、SF作家。兵庫県神戸市出身。姫路市在住。神戸海星女子学院大学卒業。宇宙作家クラブ、日本推理作家協会会員。元日本SF作家クラブ（2003年 - 2014年前半）。『華竜の宮』や『深紅の碑文』などの《オーシャンクロニクル》シリーズは、特に読者からの支持を集めている。</e>
+        <e>Sayuri Ueda (上田早夕里, Ueda Sayuri, born October 26, 1964) is a Japanese science fiction and fantasy writer.VIZ Productions is developing a feature film based on her short story 'The Street of Fruiting Bodies.'</e>
+      </Val>
+      <Val>
+        <e>上田 早夕里（うえだ さゆり、1964年10月26日 - ）は、日本の小説家、SF作家。兵庫県神戸市出身。姫路市在住。神戸海星女子学院大学卒業。宇宙作家クラブ、日本推理作家協会会員。元日本SF作家クラブ（2003年 - 2014年前半）。『華竜の宮』や『深紅の碑文』などの《オーシャンクロニクル》シリーズは、特に読者からの支持を集めている。</e>
+      </Val>
+      <Val>
+        <e>http://twitter.com/OfficeTripleTwo</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Kobe</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Sayuri_Ueda</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>45387584</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Sayuri_Ueda?oldid=662632890</e>
+      </Val>
+      <Val>
+        <e>662632890</e>
+      </Val>
+      <Val>
+        <e>nodeID://b19253678</e>
+      </Val>
+      <Val>
+        <e>Japanese writer</e>
+        <e>Japanese writer</e>
+      </Val>
+      <Val>
+        <e>1964-10-26</e>
+      </Val>
+      <Val>
+        <e>1964-10-26</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>1964</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Sayuri</e>
+      </Val>
+      <Val>
+        <e>Writer</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Kobe, Japan</e>
+      </Val>
+      <Val>
+        <e>1964-10-26</e>
+      </Val>
+      <Val>
+        <e>Ueda</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Science_fiction</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Horizon_F.C.__Nyein_Chan_Aung__1/dump0">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://dbpedia.org/ontology/OrganisationMember</e>
+        <e>http://schema.org/Person</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Nyein Chan Aung</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Horizon_F.C.</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>5</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Yhonathan_Barrios/dump0">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://dbpedia.org/ontology/Agent</e>
+        <e>http://dbpedia.org/ontology/Athlete</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+        <e>http://dbpedia.org/ontology/BaseballPlayer</e>
+        <e>http://www.wikidata.org/entity/Q10871364</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:Bradenton_Marauders_players</e>
+        <e>http://dbpedia.org/resource/Category:Biloxi_Shuckers_players</e>
+        <e>http://dbpedia.org/resource/Category:People_from_Cartagena,_Colombia</e>
+        <e>http://dbpedia.org/resource/Category:Gulf_Coast_Pirates_players</e>
+        <e>http://dbpedia.org/resource/Category:Altoona_Curve_players</e>
+        <e>http://dbpedia.org/resource/Category:State_College_Spikes_players</e>
+      </Val>
+      <Val>
+        <e>Yhonathan Barrios</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Yhonathan Barrios</e>
+      </Val>
+      <Val>
+        <e>Yhonathan Barrios</e>
+      </Val>
+      <Val>
+        <e>Yhonathan Barrios (born December 1, 1991) is a Colombian professional baseball pitcher for the Milwaukee Brewers of Major League Baseball (MLB).</e>
+      </Val>
+      <Val>
+        <e>Yhonathan Barrios (born December 1, 1991) is a Colombian professional baseball pitcher for the Milwaukee Brewers of Major League Baseball (MLB).</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Cartagena,_Colombia</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Yhonathan_Barrios</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Cartagena,_Colombia</e>
+      </Val>
+      <Val>
+        <e>47403237</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Yhonathan_Barrios?oldid=682774899</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>nodeID://b19282453</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>1991-12-01</e>
+      </Val>
+      <Val>
+        <e>1991-12-01</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Pitcher</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Pitcher</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Yinka_Durosinmi/dump0">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://schema.org/Person</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:Living_people</e>
+        <e>http://dbpedia.org/resource/Category:Yoruba_royalty</e>
+        <e>http://dbpedia.org/resource/Category:Lagos_State_University_alumni</e>
+        <e>http://dbpedia.org/resource/Category:Lagos_State_Polytechnic_alumni</e>
+        <e>http://dbpedia.org/resource/Category:Lagos_State_politicians</e>
+      </Val>
+      <Val>
+        <e>Yinka Durosinmi</e>
+        <e>Durosinmi, Yinka</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Yinka Durosinmi</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Nigeria</e>
+        <e>http://dbpedia.org/resource/Ojo,_Lagos_State</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Yinka_Durosinmi</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>47264838</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>682267081</e>
+      </Val>
+      <Val>
+        <e>nodeID://b21782892</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>1961-06-25</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>1961</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Yinka</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Lagos_State</e>
+        <e>http://dbpedia.org/resource/Nigeria</e>
+      </Val>
+      <Val>
+        <e>1961-06-25</e>
+      </Val>
+      <Val>
+        <e>Durosinmi</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Armen_Poghosyan_(painter)/dump0">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+        <e>http://dbpedia.org/ontology/Artist</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:Living_people</e>
+        <e>http://dbpedia.org/resource/Category:1947_births</e>
+        <e>http://dbpedia.org/resource/Category:Armenian_painters</e>
+        <e>http://dbpedia.org/resource/Category:Armenian_military_personnel_of_the_Nagorno-Karabakh_War</e>
+      </Val>
+      <Val>
+        <e>)</e>
+        <e>Armen Poghosyan (</e>
+      </Val>
+      <Val>
+        <e>http://wikidata.dbpedia.org/resource/Q20747307</e>
+      </Val>
+      <Val>
+        <e>Armen Poghosyan</e>
+      </Val>
+      <Val>
+        <e>Armen Poghosyan (painter)</e>
+      </Val>
+      <Val>
+        <e>Armen Poghosyan (Armenian: Արմեն Պողոսյան: October 3, 1947) is an Armenian painter, poet, and sculptor. He studied in Armenian State Pedagogical University as a painter and sculptor. He was a participant of Nagorno-Karabakh War. In 1999 he moved to United States of America, and now lives there with his family. He had also published numerous books of poems the most famous of whcih are 'Stone Door' and 'Stone Bird' printed and published in 2005 and 2006 consequantly.</e>
+      </Val>
+      <Val>
+        <e>Armen Poghosyan (Armenian: Արմեն Պողոսյան: October 3, 1947) is an Armenian painter, poet, and sculptor. He studied in Armenian State Pedagogical University as a painter and sculptor. He was a participant of Nagorno-Karabakh War. In 1999 he moved to United States of America, and now lives there with his family. He had also published numerous books of poems the most famous of whcih are 'Stone Door' and 'Stone Bird' printed and published in 2005 and 2006 consequantly.</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Armenia</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Armen_Poghosyan_(painter)</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Arevshat,_Shirak</e>
+      </Val>
+      <Val>
+        <e>47418336</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>680526692</e>
+      </Val>
+      <Val>
+        <e>nodeID://b961434</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>1947-10-03</e>
+      </Val>
+      <Val>
+        <e>1947-10-03</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Armenian</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+  </SourceEntities>
+  <TargetEntities>
+    <Entity uri="http://dbpedia.org/resource/Armen_Poghosyan_(painter)/dump1">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+        <e>http://dbpedia.org/ontology/Agent</e>
+        <e>http://schema.org/Person</e>
+        <e>http://www.w3.org/2002/07/owl#Thing</e>
+        <e>http://www.wikidata.org/entity/Q483501</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:Armenian_military_personnel_of_the_Nagorno-Karabakh_War</e>
+      </Val>
+      <Val>
+        <e>)</e>
+      </Val>
+      <Val>
+        <e>http://wikidata.dbpedia.org/resource/Q20747307</e>
+        <e>http://www.wikidata.org/entity/Q20747307</e>
+      </Val>
+      <Val>
+        <e>Armen Poghosyan</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Armen Poghosyan (Armenian: Արմեն Պողոսյան: October 3, 1947) is an Armenian painter, poet, and sculptor. He studied in Armenian State Pedagogical University as a painter and sculptor. He was a participant of Nagorno-Karabakh War. In 1999 he moved to United States of America, and now lives there with his family. He had also published numerous books of poems the most famous of whcih are 'Stone Door' and 'Stone Bird' printed and published in 2005 and 2006 consequantly.</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Armenia</e>
+        <e>http://dbpedia.org/resource/Arevshat,_Shirak</e>
+      </Val>
+      <Val>
+        <e>680526692</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>47418336</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Armen_Poghosyan_(painter)?oldid=680526692</e>
+      </Val>
+      <Val>
+        <e>nodeID://b961434</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>1947-10-03</e>
+      </Val>
+      <Val>
+        <e>1947-10-03</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Armenian</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Yinka_Durosinmi/dump1">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</e>
+        <e>http://dbpedia.org/ontology/Agent</e>
+        <e>http://schema.org/Person</e>
+        <e>http://www.w3.org/2002/07/owl#Thing</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:Living_people</e>
+        <e>http://dbpedia.org/resource/Category:Lagos_State_University_alumni</e>
+        <e>http://dbpedia.org/resource/Category:Yoruba_royalty</e>
+        <e>http://dbpedia.org/resource/Category:Lagos_State_Polytechnic_alumni</e>
+        <e>http://dbpedia.org/resource/Category:All_Progressives_Congress_politicians</e>
+        <e>http://dbpedia.org/resource/Category:Lagos_State_politicians</e>
+      </Val>
+      <Val>
+        <e>Yinka Durosinmi</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Prince Yinka Mursiq Durosinmi (born 25 June 1961) is a Nigerian politician and former Chairman of Ojo local government area of Lagos State.</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Nigeria</e>
+        <e>http://dbpedia.org/resource/Lagos_State</e>
+      </Val>
+      <Val>
+        <e>682267081</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>47264838</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Yinka_Durosinmi</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Yinka_Durosinmi?oldid=682267081</e>
+      </Val>
+      <Val>
+        <e>nodeID://b21782892</e>
+      </Val>
+      <Val>
+        <e>Nigerian politician</e>
+        <e>Nigerian politician</e>
+      </Val>
+      <Val>
+        <e>1961-06-25</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Yinka</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>1961-06-25</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Ojo,_Lagos_State</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/2015_Horizon_FC_season__Nyein_Chan_Aung__1/dump1">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://dbpedia.org/ontology/OrganisationMember</e>
+        <e>http://schema.org/Person</e>
+        <e>http://www.w3.org/2002/07/owl#Thing</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Nyein Chan Aung</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>5</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Yhonathan_Barrios/dump1">
+      <Val>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+        <e>http://www.w3.org/2002/07/owl#Thing</e>
+        <e>http://www.wikidata.org/entity/Q10871364</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:Senadores_de_San_Juan_players</e>
+        <e>http://dbpedia.org/resource/Category:Jamestown_Jammers_players</e>
+        <e>http://dbpedia.org/resource/Category:Bradenton_Marauders_players</e>
+        <e>http://dbpedia.org/resource/Category:Milwaukee_Brewers_players</e>
+        <e>http://dbpedia.org/resource/Category:Indianapolis_Indians_players</e>
+        <e>http://dbpedia.org/resource/Category:People_from_Cartagena,_Colombia</e>
+        <e>http://dbpedia.org/resource/Category:Gulf_Coast_Pirates_players</e>
+        <e>http://dbpedia.org/resource/Category:West_Virginia_Power_players</e>
+        <e>http://dbpedia.org/resource/Category:Altoona_Curve_players</e>
+        <e>http://dbpedia.org/resource/Category:State_College_Spikes_players</e>
+      </Val>
+      <Val>
+        <e>Yhonathan Barrios</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Yhonathan Barrios</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Yhonathan Barrios (born December 1, 1991) is a Colombian professional baseball pitcher for the Milwaukee Brewers of Major League Baseball (MLB).</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Cartagena,_Colombia</e>
+      </Val>
+      <Val>
+        <e>682774899</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Yhonathan_Barrios?oldid=682774899</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>1991-12-01</e>
+      </Val>
+      <Val>
+        <e>1991-12-01</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Milwaukee_Brewers</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Pitcher</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Pitcher</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+    </Entity>
+    <Entity uri="http://dbpedia.org/resource/Sayuri_Ueda/dump1">
+      <Val>
+        <e>http://xmlns.com/foaf/0.1/Person</e>
+        <e>http://dbpedia.org/ontology/Person</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</e>
+        <e>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</e>
+        <e>http://www.wikidata.org/entity/Q215627</e>
+        <e>http://www.wikidata.org/entity/Q5</e>
+        <e>http://schema.org/Person</e>
+        <e>http://www.wikidata.org/entity/Q36180</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Category:People_from_Kobe</e>
+        <e>http://dbpedia.org/resource/Category:Japanese_novelists</e>
+        <e>http://dbpedia.org/resource/Category:Japanese_women_novelists</e>
+        <e>http://dbpedia.org/resource/Category:Japanese_science_fiction_writers</e>
+        <e>http://dbpedia.org/resource/Category:Japanese_fantasy_writers</e>
+      </Val>
+      <Val>
+        <e>Sayuri Ueda</e>
+        <e>Ueda, Sayuri</e>
+      </Val>
+      <Val>
+        <e>http://rdf.freebase.com/ns/m.012vn_ch</e>
+        <e>http://ja.dbpedia.org/resource/上田早夕里</e>
+        <e>http://www.wikidata.org/entity/Q11359823</e>
+      </Val>
+      <Val>
+        <e>Sayuri Ueda</e>
+        <e>Ueda, Sayuri</e>
+      </Val>
+      <Val>
+        <e>上田早夕里</e>
+        <e>Sayuri Ueda</e>
+      </Val>
+      <Val>
+        <e>上田 早夕里（うえだ さゆり、1964年10月26日 - ）は、日本の小説家、SF作家。兵庫県神戸市出身。姫路市在住。神戸海星女子学院大学卒業。宇宙作家クラブ、日本推理作家協会会員。元日本SF作家クラブ（2003年 - 2014年前半）。『華竜の宮』や『深紅の碑文』などの《オーシャンクロニクル》シリーズは、特に読者からの支持を集めている。</e>
+      </Val>
+      <Val>
+        <e>上田 早夕里（うえだ さゆり、1964年10月26日 - ）は、日本の小説家、SF作家。兵庫県神戸市出身。姫路市在住。神戸海星女子学院大学卒業。宇宙作家クラブ、日本推理作家協会会員。元日本SF作家クラブ（2003年 - 2014年前半）。『華竜の宮』や『深紅の碑文』などの《オーシャンクロニクル》シリーズは、特に読者からの支持を集めている。</e>
+        <e>Sayuri Ueda (上田早夕里, Ueda Sayuri, born October 26, 1964) is a Japanese science fiction and fantasy writer.VIZ Productions is developing a feature film based on her short story 'The Street of Fruiting Bodies.'</e>
+      </Val>
+      <Val>
+        <e>http://www.jali.or.jp/club/kanzaki/s/</e>
+        <e>http://worldsf.wordpress.com/2011/11/17/original-content-interview-with-sayuri-ueda-author-of-the-cage-of-zeus-haikasoru/</e>
+      </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Hyōgo_Prefecture</e>
+        <e>http://dbpedia.org/resource/Kobe</e>
+      </Val>
+      <Val>
+        <e>662632890</e>
+      </Val>
+      <Val>
+        <e>Kobe, Hyōgo Prefecture, Japan</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Sayuri_Ueda</e>
+      </Val>
+      <Val>
+        <e>http://en.wikipedia.org/wiki/Sayuri_Ueda?oldid=662632890</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>Japanese writer</e>
+        <e>Japanese writer</e>
+      </Val>
+      <Val>
+        <e>1964-10-26</e>
+      </Val>
+      <Val>
+        <e>1964-10-26</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>1964</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Japanese writer</e>
+      </Val>
+      <Val>
+        <e>Writer</e>
+      </Val>
+      <Val>
+        <e>Sayuri</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>Ueda</e>
+      </Val>
+      <Val>
+        <e>Kobe, Japan</e>
+      </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://www.jali.or.jp/club/kanzaki/s/</e>
+      </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val> </Val>
+      <Val>
+        <e>http://dbpedia.org/resource/Science_fiction</e>
+        <e>http://dbpedia.org/resource/Fantasy</e>
+      </Val>
+    </Entity>
+  </TargetEntities>
+  <PositiveLinks>
+    <LinkCandidate>
+      <Source>http://dbpedia.org/resource/Yhonathan_Barrios/dump0</Source>
+      <Target>http://dbpedia.org/resource/Yhonathan_Barrios/dump1</Target>
+      None
+      None
+    </LinkCandidate>
+    <LinkCandidate>
+      <Source>http://dbpedia.org/resource/Horizon_F.C.__Nyein_Chan_Aung__1/dump0</Source>
+      <Target>http://dbpedia.org/resource/2015_Horizon_FC_season__Nyein_Chan_Aung__1/dump1</Target>
+      None
+      None
+    </LinkCandidate>
+    <LinkCandidate>
+      <Source>http://dbpedia.org/resource/2015_Yangon_United_F.C._season__Nyein_Chan_Aung__1/dump0</Source>
+      <Target>http://dbpedia.org/resource/2015_Horizon_FC_season__Nyein_Chan_Aung__1/dump1</Target>
+      None
+      None
+    </LinkCandidate>
+    <LinkCandidate>
+      <Source>http://dbpedia.org/resource/Yinka_Durosinmi/dump0</Source>
+      <Target>http://dbpedia.org/resource/Yinka_Durosinmi/dump1</Target>
+      None
+      None
+    </LinkCandidate>
+    <LinkCandidate>
+      <Source>http://dbpedia.org/resource/Armen_Poghosyan_(painter)/dump0</Source>
+      <Target>http://dbpedia.org/resource/Armen_Poghosyan_(painter)/dump1</Target>
+      None
+      None
+    </LinkCandidate>
+    <LinkCandidate>
+      <Source>http://dbpedia.org/resource/Sayuri_Ueda/dump0</Source>
+      <Target>http://dbpedia.org/resource/Sayuri_Ueda/dump1</Target>
+      None
+      None
+    </LinkCandidate>
+  </PositiveLinks>
+  <NegativeLinks> </NegativeLinks>
+  <UnlabeledLinks> </UnlabeledLinks>
+</Entities>

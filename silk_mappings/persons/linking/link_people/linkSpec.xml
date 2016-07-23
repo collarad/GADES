@@ -1,0 +1,27 @@
+<Interlink id="link_people">
+        <SourceDataset dataSource="dump0" var="a" typeUri="http://dbpedia.org/ontology/Person">
+        <RestrictTo>
+          
+        </RestrictTo>
+      </SourceDataset>
+        <TargetDataset dataSource="dump1" var="b" typeUri="http://dbpedia.org/ontology/Person">
+        <RestrictTo>
+          
+        </RestrictTo>
+      </TargetDataset>
+        <LinkageRule linkType="&lt;http://www.w3.org/2002/07/owl#sameAs&gt;">
+        <Aggregate id="average1" required="false" weight="1" type="average">
+            <Compare id="equality1" required="false" weight="1" metric="equality" threshold="0.0" indexing="true">
+            <Input id="sourcePath2" path="/&lt;http://dbpedia.org/property/birthDate&gt;"/><Input id="targetPath2" path="/&lt;http://dbpedia.org/property/birthDate&gt;"/>
+          </Compare><Compare id="equality2" required="false" weight="1" metric="equality" threshold="0.0" indexing="true">
+            <Input id="sourcePath3" path="/&lt;http://dbpedia.org/property/gender&gt;"/><Input id="targetPath3" path="/&lt;http://dbpedia.org/property/gender&gt;"/>
+          </Compare><Compare id="levenshteinDistance1" required="true" weight="1" metric="levenshteinDistance" threshold="0.0" indexing="true">
+            <Input id="sourcePath1" path="/&lt;http://xmlns.com/foaf/0.1/name&gt;"/><Input id="targetPath1" path="/&lt;http://xmlns.com/foaf/0.1/name&gt;"/><Param name="minChar" value="0"/><Param name="maxChar" value="z"/>
+          </Compare>
+          </Aggregate>
+        <Filter/>
+      </LinkageRule>
+        <Outputs>
+          
+        </Outputs>
+      </Interlink>
