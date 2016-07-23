@@ -2,6 +2,8 @@ package rdfMoleculesEvaluation;
 
 import org.javatuples.Pair;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.*;
 
 /**
@@ -14,16 +16,38 @@ public class JaccardEvaluator {
 
         Jaccard jc = new Jaccard();
 
-        List<Pair> list1 = new ArrayList<Pair>(Arrays.asList(new Pair("A", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
-        List<Pair> list2 = new ArrayList<Pair>(Arrays.asList(new Pair("A2", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
+        //Test - getting the properties
+        //RDFUtil util = new RDFUtil();
+        //util.getPropertiesFromSubject("<http://dbpedia.org/resource/2015–16_KS_Cracovia_(football)_season/dump0>", "http://localhost:3030/dump0/query");
 
-        ArrayList<Pair> intersect = (ArrayList<Pair>) jc.intersection(list1, list2);
-        List<Pair> un = (List<Pair>) jc.union(list1, list2);
-        System.out.println("Intersecion: "+intersect);
-        System.out.println("Union: "+un);
+        String file = "C://DIC/Temp/dump_830k/list_dump0";
+        //Loading the file of subjects
+        try{
 
-        System.out.println("Jaccard similarity");
-        System.out.println(jc.jaccard(list1, list2));
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            RDFUtil util = new RDFUtil();
+            while ((line = br.readLine()) != null) {
+                //process the line.
+                List<Pair> dump0 = util.getPropertiesFromSubject(line, "http://localhost:3030/dump0/query");
+                List<Pair> dump1 = util.getPropertiesFromSubject(line.replace("/dump0","/dump1"), "http://localhost:3030/dump1/query");
+                System.out.println(jc.jaccard(dump0, dump1));
+            }
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        //Test - Jaccard algorithm
+        //List<Pair> list1 = new ArrayList<Pair>(Arrays.asList(new Pair("A", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
+        //List<Pair> list2 = new ArrayList<Pair>(Arrays.asList(new Pair("A2", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
+
+        //ArrayList<Pair> intersect = (ArrayList<Pair>) jc.intersection(list1, list2);
+        //List<Pair> un = (List<Pair>) jc.union(list1, list2);
+        //System.out.println("Intersecion: "+intersect);
+        //System.out.println("Union: "+un);
+
+        //System.out.println("Jaccard similarity");
+        //System.out.println(jc.jaccard(list1, list2));
 
     }
 
