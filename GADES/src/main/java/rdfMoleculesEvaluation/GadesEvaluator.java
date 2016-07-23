@@ -1,4 +1,4 @@
-package test;
+package rdfMoleculesEvaluation;
 
 import ontologyManagement.MyOWLLogicalEntity;
 import ontologyManagement.MyOWLOntology;
@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * Created by dcollarana on 7/22/2016.
  */
-public class TestMain {
+public class GadesEvaluator {
 
     public static void main (String[] args) {
 
@@ -23,8 +23,7 @@ public class TestMain {
         //String ontFile = "C://DIC/Temp/dump_830k/go.owl";
         MyOWLOntology o = new MyOWLOntology(ontFile, "http://dbpedia.org/ontology/", "HermiT");
 
-        OWLConcept a = o.getOWLConcept("http://dbpedia.org/resource/Airavt/dump0");
-        //o.getOWLConcept()
+        OWLNamedIndividual a = o.getOWLIndividual("http://dbpedia.org/resource/Airavt/dump0");
         OWLNamedIndividual b = o.getOWLIndividual("http://dbpedia.org/resource/Airavt/dump1");
 
         /*Set<MyOWLLogicalEntity> anns = new HashSet<MyOWLLogicalEntity>();
