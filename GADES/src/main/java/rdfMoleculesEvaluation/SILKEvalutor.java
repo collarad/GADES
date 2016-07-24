@@ -31,9 +31,9 @@ public class SILKEvalutor {
         System.out.println("Starting file output-0-1.nt");
         Map<String, RDFMolecule> molecules1 = joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-0-1.nt", model0, model1, jc, "/dump0");
         System.out.println("Starting file output-0-2.nt");
-        Map<String, RDFMolecule> molecules2 = joinMoleculesFromMap("C://DIC/Temp/Results/SILK/output-0-2.nt", model0, model2, jc, "/dump0", molecules1);
+        Map<String, RDFMolecule> molecules2 = joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-0-2.nt", model0, model2, jc, "/dump0", molecules1);
         System.out.println("Starting file output-1-2.nt");
-        Map<String, RDFMolecule> molecules3 = joinMoleculesFromMap("C://DIC/Temp/Results/SILK/output-1-2.nt", model1, model2, jc, "/dump2", molecules2);
+        Map<String, RDFMolecule> molecules3 = joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-1-2.nt", model1, model2, jc, "/dump2", molecules2);
 
         System.out.println("Process finished");
 
@@ -49,47 +49,11 @@ public class SILKEvalutor {
 
     private Map<String, RDFMolecule> joinMoleculesFromFile(String file, Model modelA, Model modelB, Jaccard jc, String toReplace) throws Exception {
 
-        Map<String, RDFMolecule> molecules = new HashMap<String, RDFMolecule>();
-
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
-        String molecule0;
-        String molecule1;
-        String moleculeUri;
-        RDFMolecule molecule;
-        RDFUtil util = new RDFUtil();
-        while ((line = br.readLine()) != null) {
-            String[] split = line.split(";");
-            //molecule0 = java.net.URLDecoder.decode(split[0], "UTF-8");
-            //molecule1 = java.net.URLDecoder.decode(split[1], "UTF-8");
-            molecule0 = split[0];
-            molecule1 = split[1];
-
-            //process the line.
-            List<Pair> dump0 = util.getPropertiesFromSubject(molecule0, modelA);
-            //System.out.println("dump0 size: "+dump0.size());
-            List<Pair> dump1 = util.getPropertiesFromSubject(molecule1, modelB);
-            //System.out.println("dump1 size: "+dump1.size());
-            List<Pair> un = jc.union(dump0, dump1);
-            //System.out.println("union size: "+un.size());
-
-            moleculeUri = molecule0.replace(toReplace,"");
-            if (molecules.containsKey(moleculeUri)) {
-                molecule = molecules.get(moleculeUri);
-            } else {
-                molecule = new RDFMolecule(moleculeUri);
-                molecules.put(moleculeUri, molecule);
-            }
-            molecule.addPairs(un);
-        }
-        System.out.println("File: "+file);
-        System.out.println("Count: "+molecules.size());
-
-        return molecules;
+        return joinMoleculesFromFile(file, modelA, modelB, jc, toReplace, new HashMap<String, RDFMolecule>());
 
     }
 
-    private Map<String, RDFMolecule> joinMoleculesFromMap(String file, Model modelA, Model modelB, Jaccard jc, String toReplace, Map<String, RDFMolecule> map) throws Exception {
+    private Map<String, RDFMolecule> joinMoleculesFromFile(String file, Model modelA, Model modelB, Jaccard jc, String toReplace, Map<String, RDFMolecule> map) throws Exception {
 
         Map<String, RDFMolecule> molecules = map;
 

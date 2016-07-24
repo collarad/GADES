@@ -56,7 +56,7 @@ public class PrecisionAndRecallCalculator {
         System.out.println("True Set: "+true_set);
 
         JaccardEvaluator jac = new JaccardEvaluator();
-        List<Triplet> jacTriplets = jac.getModelAsAList();
+        List<Triplet> jacTriplets = null;//jac.getModelAsAList();
         int computed_set = jacTriplets.size();
         System.out.println("Computed Set: "+computed_set);
 
