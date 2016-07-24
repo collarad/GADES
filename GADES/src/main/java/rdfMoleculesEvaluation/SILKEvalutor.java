@@ -22,20 +22,27 @@ public class SILKEvalutor {
         Model model1 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump1.nt");
         Model model2 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump2.nt");
 
-        Jaccard jc = new Jaccard();
-        JoinTriples jt = new JoinTriples();
+        Jaccard jc = new Jaccard();;
 
         //Files
-        joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-0-1.nt", model0, model1, jc, jt, "/dump0");
-        joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-0-2.nt", model0, model2, jc, jt, "/dump0");
-        joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-1-2.nt", model1, model2, jc, jt, "/dump1");
+        System.out.println("Starting file output-0-1.nt");
+        List<Triplet> result1 = joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-0-1.nt", model0, model1, jc, "/dump0");
+        System.out.println("Starting file output-0-2.nt");
+        List<Triplet> result2 = joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-0-2.nt", model0, model2, jc, "/dump0");
+        System.out.println("Starting file output-1-2.nt");
+        List<Triplet> result3 = joinMoleculesFromFile("C://DIC/Temp/Results/SILK/output-1-2.nt", model1, model2, jc, "/dump1");
         System.out.println("Process finished");
 
-        return jt.get();
+        List<Triplet> merge1 = jc.union(result1, result2);
+        List<Triplet> merge2 = jc.union(merge1, result3);
+
+        return merge2;
 
     }
 
-    private void joinMoleculesFromFile(String file, Model modelA, Model modelB, Jaccard jc, JoinTriples jt, String toReplace) throws Exception {
+    private List<Triplet> joinMoleculesFromFile(String file, Model modelA, Model modelB, Jaccard jc, String toReplace) throws Exception {
+
+        JoinTriples jt = new JoinTriples();
 
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
@@ -54,13 +61,19 @@ public class SILKEvalutor {
             count++;
             //process the line.
             List<Pair> dump0 = util.getPropertiesFromSubject(molecule0, modelA);
+            //System.out.println("dump0 size: "+dump0.size());
             List<Pair> dump1 = util.getPropertiesFromSubject(molecule1, modelB);
+            //System.out.println("dump1 size: "+dump1.size());
             List<Pair> un = jc.union(dump0, dump1);
+            //System.out.println("union size: "+un.size());
             jt.addMolecule(molecule0.replace(toReplace,""), un);
 
         }
         System.out.println("File: "+file);
         System.out.println("Count: "+count);
+
+        return jt.get();
+
     }
 
     public static void main (String[] args) {

@@ -17,22 +17,21 @@ public class GoldStandard {
     public List<Triplet> getModelAsAList()throws Exception {
 
         Model modelGold = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/goldStandard.nt");
-
         String file = "C://DIC/Temp/dump_830k/list_gold";
         //Loading the file of subjects
-            JoinTriples jt = new JoinTriples();
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String line;
-            RDFUtil util = new RDFUtil();
-            int count = 0;
-            while ((line = br.readLine()) != null) {
-                //process the line.
-                List<Pair> molecule = util.getPropertiesFromSubject(line, modelGold);
-                count++;
-                jt.addMolecule(line, molecule);
-            }
-            System.out.println("Count: "+count);
-            return jt.get();
+        JoinTriples jt = new JoinTriples();
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line;
+        RDFUtil util = new RDFUtil();
+        int count = 0;
+        while ((line = br.readLine()) != null) {
+          //process the line.
+          List<Pair> molecule = util.getPropertiesFromSubject(line, modelGold);
+          count++;
+          jt.addMolecule(line, molecule);
+        }
+        System.out.println("Subjects Count: "+count);
+        return jt.get();
     }
 
 

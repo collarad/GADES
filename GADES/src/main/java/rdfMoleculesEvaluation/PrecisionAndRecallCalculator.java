@@ -65,10 +65,10 @@ public class PrecisionAndRecallCalculator {
         int intersection_set = intersectionTriplets.size();
         System.out.println("Intersection Set: "+intersection_set);
 
-        float precision = intersection_set / computed_set;
+        double precision = (double) intersection_set / computed_set;
         System.out.println("Precision: "+precision);
 
-        float recall = intersection_set / true_set;
+        double recall = (double) intersection_set / true_set;
         System.out.println("Recall: "+recall);
     }
 

@@ -31,6 +31,7 @@ public class JaccardEvaluator {
         joinMoleculesFromFile("C://DIC/Temp/dump_830k/list_dump0", model0, model2, jc, jt, "/dump0", "/dump2", threshold);
         joinMoleculesFromFile("C://DIC/Temp/dump_830k/list_dump1", model1, model2, jc, jt, "/dump1", "/dump2", threshold);
         System.out.println("Process finished");
+        //System.out.println("Subjects Count: "+jt.size());
         return jt.get();
     }
 
