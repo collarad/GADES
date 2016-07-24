@@ -3,6 +3,7 @@ package rdfMoleculesEvaluation;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.riot.RDFDataMgr;
 import org.javatuples.Pair;
+import org.javatuples.Triplet;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,20 +15,27 @@ import java.util.*;
 
 public class JaccardEvaluator {
 
-    public static void main (String[] args) {
-
-        Jaccard jc = new Jaccard();
+    public List<Triplet> getModelAsAList()throws Exception {
+        System.out.println("Starting to join the molecules from Jaccard");
 
         Model model0 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump0.nt");
         Model model1 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump1.nt");
-        //Test - getting the properties
-        //RDFUtil util = new RDFUtil();
-        //util.getPropertiesFromSubject("<http://dbpedia.org/resource/2015–16_KS_Cracovia_(football)_season/dump0>", "http://localhost:3030/dump0/query");
+        Model model2 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump2.nt");
 
-        String file = "C://DIC/Temp/dump_830k/list_dump0";
-        //Loading the file of subjects
-        try{
-            //JoinMolecules jm = new JoinMolecules("C://DIC/Temp/Results/jaccard_02.nt");
+        Jaccard jc = new Jaccard();
+        JoinTriples jt = new JoinTriples();
+
+        double threshold = 0.8;
+        //Files
+        joinMoleculesFromFile("C://DIC/Temp/dump_830k/list_dump0", model0, model1, jc, jt, "/dump0", "/dump1", threshold);
+        joinMoleculesFromFile("C://DIC/Temp/dump_830k/list_dump0", model0, model2, jc, jt, "/dump0", "/dump2", threshold);
+        joinMoleculesFromFile("C://DIC/Temp/dump_830k/list_dump1", model1, model2, jc, jt, "/dump1", "/dump2", threshold);
+        System.out.println("Process finished");
+        return jt.get();
+    }
+
+    private void joinMoleculesFromFile(String file, Model modelA, Model modelB, Jaccard jc, JoinTriples jt, String toReplaceA, String toReplaceB, double threshold) throws Exception {
+
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
             String line1;
@@ -36,35 +44,31 @@ public class JaccardEvaluator {
             int count = 0;
             while ((line = br.readLine()) != null) {
                 //process the line.
-                List<Pair> dump0 = util.getPropertiesFromSubject(line,model0);
-                line1 = line.replace("/dump0","/dump1");
-                List<Pair> dump1 = util.getPropertiesFromSubject(line1,model1);
+                List<Pair> dump0 = util.getPropertiesFromSubject(line,modelA);
+                line1 = line.replace(toReplaceA,toReplaceB);
+                List<Pair> dump1 = util.getPropertiesFromSubject(line1,modelB);
                 sm = jc.jaccard(dump0, dump1);
-                if (sm > 0.40) {
+                if (sm > threshold) {
                     count++;
-                    System.out.println(line+ ";"+line1);
-                    //List<Pair> un = jc.union(dump0, dump1);
-                    //jm.addMolecule(line.replace("/dump0",""), un);
+                    List<Pair> un = jc.union(dump0, dump1);
+                    jt.addMolecule(line.replace(toReplaceA,""), un);
                 }
             }
-            //jm.close();
+            System.out.println("File: "+file);
             System.out.println("Count: "+count);
+    }
+
+    public static void main (String[] args) {
+
+        JaccardEvaluator jac = new JaccardEvaluator();
+
+        try{
+
+            System.out.println("Size: "+jac.getModelAsAList().size());
 
         }catch (Exception ex) {
             ex.printStackTrace();
         }
-
-        //Test - Jaccard algorithm
-        //List<Pair> list1 = new ArrayList<Pair>(Arrays.asList(new Pair("A", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
-        //List<Pair> list2 = new ArrayList<Pair>(Arrays.asList(new Pair("A2", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
-
-        //ArrayList<Pair> intersect = (ArrayList<Pair>) jc.intersection(list1, list2);
-        //List<Pair> un = (List<Pair>) jc.union(list1, list2);
-        //System.out.println("Intersecion: "+intersect);
-        //System.out.println("Union: "+un);
-
-        //System.out.println("Jaccard similarity");
-        //System.out.println(jc.jaccard(list1, list2));
 
     }
 

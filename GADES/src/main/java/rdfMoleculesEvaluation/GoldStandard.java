@@ -3,6 +3,7 @@ package rdfMoleculesEvaluation;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.riot.RDFDataMgr;
 import org.javatuples.Pair;
+import org.javatuples.Triplet;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,28 +14,36 @@ import java.util.List;
  */
 public class GoldStandard {
 
-    public static void main (String[] args) {
+    public List<Triplet> getModelAsAList()throws Exception {
 
         Model modelGold = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/goldStandard.nt");
 
         String file = "C://DIC/Temp/dump_830k/list_gold";
         //Loading the file of subjects
-        try{
-            JoinMolecules jm = new JoinMolecules("C://DIC/Temp/Results/goaldTemp.nt");
+            JoinTriples jt = new JoinTriples();
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
             RDFUtil util = new RDFUtil();
             int count = 0;
             while ((line = br.readLine()) != null) {
                 //process the line.
-                List<Pair> molecule = util.getPropertiesFromSubject(line,modelGold);
+                List<Pair> molecule = util.getPropertiesFromSubject(line, modelGold);
                 count++;
-                jm.addMolecule(line, molecule);
+                jt.addMolecule(line, molecule);
             }
-            jm.close();
             System.out.println("Count: "+count);
+            return jt.get();
+    }
 
-        }catch (Exception ex) {
+
+    public static void main (String[] args) {
+
+        GoldStandard gs = new GoldStandard();
+        try {
+
+            System.out.println("Size: "+gs.getModelAsAList().size());
+
+        }catch(Exception ex) {
             ex.printStackTrace();
         }
 
