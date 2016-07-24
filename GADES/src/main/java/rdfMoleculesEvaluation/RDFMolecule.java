@@ -52,7 +52,8 @@ public class RDFMolecule {
         if (!(other instanceof RDFMolecule))return false;
         RDFMolecule otherMolecule = (RDFMolecule)other;
         if (this.subject == otherMolecule.subject) {
-            if (jc.jaccard(this.triples, otherMolecule.triples) > 0.9)
+            //if (jc.jaccard(this.triples, otherMolecule.triples) > 0.9)
+            if (this.triples.equals(otherMolecule.triples))
                 return true;
             else
                 return false;
