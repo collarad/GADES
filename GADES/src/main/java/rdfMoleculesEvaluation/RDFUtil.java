@@ -1,6 +1,7 @@
 package rdfMoleculesEvaluation;
 
 import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Model;
 import org.javatuples.Pair;
 
 import java.util.ArrayList;
@@ -12,8 +13,6 @@ import java.util.List;
 public class RDFUtil {
 
     public List<Pair> getPropertiesFromSubject (String uri, String sparqlEndPoint){
-
-        List<Pair> result = null;
         String sparqlQueryString1 = "PREFIX dbont: <http://dbpedia.org/ontology/> " +
                 "SELECT ?predicate ?object " +
                 "WHERE { " +
@@ -22,7 +21,23 @@ public class RDFUtil {
 
         Query query = QueryFactory.create(sparqlQueryString1);
         QueryExecution qexec = QueryExecutionFactory.sparqlService(sparqlEndPoint, query);
+        return execute(qexec);
+    }
 
+    public List<Pair> getPropertiesFromSubject (String uri, Model model){
+        String sparqlQueryString1 = "PREFIX dbont: <http://dbpedia.org/ontology/> " +
+                "SELECT ?predicate ?object " +
+                "WHERE { " +
+                uri + " ?predicate ?object "+
+                "}";
+
+        QueryExecution qexec = QueryExecutionFactory.create(sparqlQueryString1, model);
+        return execute(qexec);
+    }
+
+    private List<Pair> execute(QueryExecution qexec) {
+
+        List<Pair> result = null;
         ResultSet results = qexec.execSelect();
         if (results.hasNext())
             result =  new ArrayList<Pair>();
@@ -42,7 +57,6 @@ public class RDFUtil {
             result.add(new Pair(predicate, object));
         }
         qexec.close() ;
-
         return result;
     }
 

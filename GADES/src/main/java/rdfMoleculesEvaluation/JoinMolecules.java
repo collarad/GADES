@@ -2,17 +2,34 @@ package rdfMoleculesEvaluation;
 
 
 import org.apache.jena.rdf.model.Model;
+import org.javatuples.Pair;
+
+import java.io.*;
+import java.util.List;
 
 /**
  * Created by dcollarana on 7/23/2016.
  */
-public abstract class JoinMolecules {
+public class JoinMolecules {
 
-    public static Model join(String uri1, String uri2) {
+    private BufferedWriter bw;
 
-        Model m = null;
-        return m;
+    public JoinMolecules(String fileName) throws Exception {
 
+        File fout = new File(fileName);
+        FileOutputStream fos = new FileOutputStream(fout);
+        bw = new BufferedWriter(new OutputStreamWriter(fos, "UTF-8"));
+    }
+
+    public void addMolecule(String uri, List<Pair> properties) throws Exception {
+        for (Pair elem: properties) {
+            bw.write(uri+" "+elem.getValue0().toString()+" "+elem.getValue1().toString()+" .");
+            bw.newLine();
+        }
+    }
+
+    public void close()throws Exception {
+        bw.close();
     }
 
 }
