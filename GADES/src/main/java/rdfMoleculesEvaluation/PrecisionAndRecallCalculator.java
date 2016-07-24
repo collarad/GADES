@@ -26,12 +26,12 @@ public class PrecisionAndRecallCalculator {
         System.out.println("Process starting");
 
         GoldStandard gs = new GoldStandard();
-        List<Triplet> gsTriplets = gs.getModelAsAList();
+        List<Triplet> gsTriplets = null;//gs.getModelAsAList();
         int true_set = gsTriplets.size();
         System.out.println("True Set: "+true_set);
 
         SILKEvalutor silk = new SILKEvalutor();
-        List<Triplet> silkTriplets = silk.getModelAsAList();
+        List<Triplet> silkTriplets = null;//silk.getModelAsAList();
         int computed_set = silkTriplets.size();
         System.out.println("Computed Set: "+computed_set);
 
@@ -51,7 +51,7 @@ public class PrecisionAndRecallCalculator {
         System.out.println("Process starting");
 
         GoldStandard gs = new GoldStandard();
-        List<Triplet> gsTriplets = gs.getModelAsAList();
+        List<Triplet> gsTriplets = null;//gs.getModelAsAList();
         int true_set = gsTriplets.size();
         System.out.println("True Set: "+true_set);
 

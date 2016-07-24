@@ -1,7 +1,7 @@
 package rdfMoleculesEvaluation;
 
-import org.javatuples.Triplet;
-
+import org.javatuples.Pair;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,22 +10,35 @@ import java.util.List;
 public class RDFMolecule {
 
     String subject;
-    List<Triplet> triples;
+    List<Pair> triples;
     Jaccard jc;
 
-    public RDFMolecule(String subject, List<Triplet> triples) {
+    public RDFMolecule(String subject) {
+        this(subject, new ArrayList<Pair>());
+    }
+
+    public RDFMolecule(String subject, List<Pair> triples) {
         this.subject = subject;
         this.triples = triples;
         jc = new Jaccard();
     }
 
-    public void addTriplet(Triplet triplet) {
+    public void unionPairs(List<Pair> triplets) {
+        List<Pair> union = jc.union(this.triples, triplets);
+        this.triples = union;
+    }
+
+    public void addPairs(List<Pair> triplets) {
+        this.triples.addAll(triplets);
+    }
+
+    public void addPair(Pair triplet) {
         this.triples.add(triplet);
     }
 
     public void joinMolecule(RDFMolecule otherMolecule) {
         if (this.subject == otherMolecule.subject) {
-            List<Triplet> union = jc.union(this.triples, otherMolecule.triples);
+            List<Pair> union = jc.union(this.triples, otherMolecule.triples);
             this.triples = union;
         }
         else

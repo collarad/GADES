@@ -7,31 +7,37 @@ import org.javatuples.Triplet;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by dcollarana on 7/24/2016.
  */
 public class GoldStandard {
 
-    public List<Triplet> getModelAsAList()throws Exception {
+    public List<RDFMolecule> getModelAsAList()throws Exception {
 
+        System.out.println("Starting to build GoldStandard");
         Model modelGold = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/goldStandard.nt");
         String file = "C://DIC/Temp/dump_830k/list_gold";
+        List<RDFMolecule> molecules = new ArrayList<RDFMolecule>();
+
         //Loading the file of subjects
-        JoinTriples jt = new JoinTriples();
+        //JoinTriples jt = new JoinTriples();
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
         RDFUtil util = new RDFUtil();
         int count = 0;
+        RDFMolecule molecule;
         while ((line = br.readLine()) != null) {
-          //process the line.
-          List<Pair> molecule = util.getPropertiesFromSubject(line, modelGold);
-          count++;
-          jt.addMolecule(line, molecule);
+            molecule = new RDFMolecule(line);
+            molecule.addPairs(util.getPropertiesFromSubject(line, modelGold));
+            molecules.add(molecule);
         }
-        System.out.println("Subjects Count: "+count);
-        return jt.get();
+        System.out.println("Subjects Count: "+molecules.size());
+        return molecules;
     }
 
 
