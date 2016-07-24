@@ -1,5 +1,6 @@
 package rdfMoleculesEvaluation;
 
+import org.apache.jena.vocabulary.RDF;
 import org.javatuples.Triplet;
 
 import java.util.List;
@@ -26,17 +27,17 @@ public class PrecisionAndRecallCalculator {
         System.out.println("Process starting");
 
         GoldStandard gs = new GoldStandard();
-        List<Triplet> gsTriplets = null;//gs.getModelAsAList();
+        List<RDFMolecule> gsTriplets = gs.getModelAsAList();
         int true_set = gsTriplets.size();
         System.out.println("True Set: "+true_set);
 
         SILKEvalutor silk = new SILKEvalutor();
-        List<Triplet> silkTriplets = null;//silk.getModelAsAList();
+        List<RDFMolecule> silkTriplets = silk.getModelAsAList();
         int computed_set = silkTriplets.size();
         System.out.println("Computed Set: "+computed_set);
 
         Jaccard jc = new Jaccard();
-        List<Triplet> intersectionTriplets = jc.intersection(gsTriplets, silkTriplets);
+        List<RDFMolecule> intersectionTriplets = jc.intersection(gsTriplets, silkTriplets);
         int intersection_set = intersectionTriplets.size();
         System.out.println("Intersection Set: "+intersection_set);
 
@@ -51,17 +52,17 @@ public class PrecisionAndRecallCalculator {
         System.out.println("Process starting");
 
         GoldStandard gs = new GoldStandard();
-        List<Triplet> gsTriplets = null;//gs.getModelAsAList();
+        List<RDFMolecule> gsTriplets = gs.getModelAsAList();
         int true_set = gsTriplets.size();
         System.out.println("True Set: "+true_set);
 
         JaccardEvaluator jac = new JaccardEvaluator();
-        List<Triplet> jacTriplets = null;//jac.getModelAsAList();
+        List<RDFMolecule> jacTriplets = jac.getModelAsAList(0.8);
         int computed_set = jacTriplets.size();
         System.out.println("Computed Set: "+computed_set);
 
         Jaccard jc = new Jaccard();
-        List<Triplet> intersectionTriplets = jc.intersection(gsTriplets, jacTriplets);
+        List<RDFMolecule> intersectionTriplets = jc.intersection(gsTriplets, jacTriplets);
         int intersection_set = intersectionTriplets.size();
         System.out.println("Intersection Set: "+intersection_set);
 
