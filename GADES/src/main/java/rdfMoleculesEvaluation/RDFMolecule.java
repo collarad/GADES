@@ -18,6 +18,7 @@ public class RDFMolecule {
     }
 
     public RDFMolecule(String subject, List<Pair> triples) {
+        //System.out.println("Creating molecule: "+subject);
         this.subject = subject;
         this.triples = triples;
         jc = new Jaccard();
@@ -32,9 +33,11 @@ public class RDFMolecule {
         this.triples.addAll(triplets);
     }
 
+    /*
     public void addPair(Pair triplet) {
         this.triples.add(triplet);
     }
+    */
 
     public void joinMolecule(RDFMolecule otherMolecule) {
         if (this.subject == otherMolecule.subject) {
@@ -51,12 +54,13 @@ public class RDFMolecule {
         if (other == this) return true;
         if (!(other instanceof RDFMolecule))return false;
         RDFMolecule otherMolecule = (RDFMolecule)other;
-        if (this.subject == otherMolecule.subject) {
-            //if (jc.jaccard(this.triples, otherMolecule.triples) > 0.9)
-            if (this.triples.equals(otherMolecule.triples))
-                return true;
-            else
-                return false;
+        if (this.subject.equals(otherMolecule.subject)) {
+            return true;
+            ////if (jc.jaccard(this.triples, otherMolecule.triples) > 0.9)
+            //if (this.triples.equals(otherMolecule.triples))
+            //    return true;
+            //else
+            //   return false;
         }
         else
             return false;

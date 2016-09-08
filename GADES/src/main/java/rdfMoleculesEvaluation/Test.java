@@ -17,27 +17,50 @@ public class Test {
 
     public static void main (String[] args) {
 
+        try {
+            String file = "C://DIC/Temp/MoleculesExperiment/GADES/results_0-1.txt";
+
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            String line1;
+            String moleculeUri;
+            RDFMolecule molecule;
+            double sm;
+            RDFUtil util = new RDFUtil();
+            int count = 0;
+            while ((line = br.readLine()) != null) {
+                String[] results = line.split("\t");
+                System.out.println("Size: "+results.length);
+                System.out.println(results[0]);
+                System.out.println(results[1]);
+                System.out.println(results[2]);
+            }
+        }catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
         // Create a model and read into it from file
         // "data.ttl" assumed to be Turtle.
         
-        Model model = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/goldStandard.nt");
+        //Model model = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/goldStandard.nt");
 
         //Test - getting the properties
         //RDFUtil util = new RDFUtil();
         //util.getPropertiesFromSubject("<http://dbpedia.org/resource/2015–16_KS_Cracovia_(football)_season/dump0>", "http://localhost:3030/dump0/query");
 
         //Test - Jaccard algorithm
-        Jaccard jc = new Jaccard();
-        List<Pair> list1 = new ArrayList<Pair>(Arrays.asList(new Pair("A", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
-        List<Pair> list2 = new ArrayList<Pair>(Arrays.asList(new Pair("A2", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
+        //Jaccard jc = new Jaccard();
+        //List<Pair> list1 = new ArrayList<Pair>(Arrays.asList(new Pair("A", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
+        //List<Pair> list2 = new ArrayList<Pair>(Arrays.asList(new Pair("A2", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));
 
-        ArrayList<Pair> intersect = (ArrayList<Pair>) jc.intersection(list1, list2);
-        List<Pair> un = (List<Pair>) jc.union(list1, list2);
-        System.out.println("Intersecion: "+intersect);
-        System.out.println("Union: "+un);
+        //ArrayList<Pair> intersect = (ArrayList<Pair>) jc.intersection(list1, list2);
+        //List<Pair> un = (List<Pair>) jc.union(list1, list2);
+        //System.out.println("Intersecion: "+intersect);
+        //System.out.println("Union: "+un);
 
-        System.out.println("Jaccard similarity");
-        System.out.println(jc.jaccard(list1, list2));
+        //System.out.println("Jaccard similarity");
+        //System.out.println(jc.jaccard(list1, list2));
 
         //Test - Jaccard algorithm
         //List<Pair> list1 = new ArrayList<Pair>(Arrays.asList(new Pair("A", "A1"), new Pair("B", "B1"), new Pair("C", "C1")));

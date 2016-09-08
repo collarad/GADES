@@ -20,8 +20,8 @@ public class GoldStandard {
     public List<RDFMolecule> getModelAsAList()throws Exception {
 
         System.out.println("Starting to build GoldStandard");
-        Model modelGold = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/goldStandard.nt");
-        String file = "C://DIC/Temp/dump_830k/list_gold";
+        Model modelGold = RDFDataMgr.loadModel("C://DIC/Temp/MoleculesExperiment/goldStandard.nt");
+        String file = "C://DIC/Temp/MoleculesExperiment/list_gold";
         List<RDFMolecule> molecules = new ArrayList<RDFMolecule>();
 
         //Loading the file of subjects
@@ -37,6 +37,7 @@ public class GoldStandard {
             molecules.add(molecule);
         }
         System.out.println("Subjects Count: "+molecules.size());
+        br.close();
         return molecules;
     }
 

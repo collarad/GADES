@@ -17,7 +17,7 @@ public class JaccardEvaluator {
 
     public List<RDFMolecule> getModelAsAList(double threshold)throws Exception {
 
-        System.out.println("Starting to join the molecules from Jaccard");
+        System.out.println("Starting to join the molecules from Jaccard with threshold: "+threshold);
 
         Model model0 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump0.nt");
         Model model1 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump1.nt");
@@ -76,14 +76,19 @@ public class JaccardEvaluator {
                     molecule = new RDFMolecule(moleculeUri);
                     molecules.put(moleculeUri, molecule);
                 }
-                molecule.addPairs(un);
+                molecule.unionPairs(un);
             }
         }
         System.out.println("File: "+file);
         System.out.println("Count: "+count);
-
+        br.close();
         return molecules;
     }
+
+    //private String getUriFromString(String line)
+    //{
+    //    line.split("\t")
+    //}
 
     public static void main (String[] args) {
 
@@ -91,7 +96,7 @@ public class JaccardEvaluator {
 
         try{
 
-            System.out.println("Size: "+jac.getModelAsAList(0.2).size());
+            System.out.println("Size: "+jac.getModelAsAList(0.8).size());
 
         }catch (Exception ex) {
             ex.printStackTrace();

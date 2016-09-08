@@ -19,7 +19,7 @@ public class SILKEvalutor {
 
     public List<RDFMolecule> getModelAsAList()throws Exception {
 
-        System.out.println("Starting to join the molecules from SILK");
+        System.out.println("Starting to join the molecules with SILK");
 
         Model model0 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump0.nt");
         Model model1 = RDFDataMgr.loadModel("C://DIC/Temp/dump_830k/dump1.nt");
@@ -87,7 +87,7 @@ public class SILKEvalutor {
         }
         System.out.println("File: "+file);
         System.out.println("Count: "+molecules.size());
-
+        br.close();
         return molecules;
 
     }
